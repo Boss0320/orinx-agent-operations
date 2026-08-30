@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 390 1120" role="img" aria-labelledby="title desc">
+  <title id="title">ORINX bounded agent-operations architecture</title>
+  <desc id="desc">A vertical responsibility chain from synthetic input to AI decision, deterministic controls, reconciliation, watchdog, and human escalation.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#08131f"/>
+      <stop offset="1" stop-color="#111c2d"/>
+    </linearGradient>
+    <marker id="arrow" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#7dd3fc"/>
+    </marker>
+    <style>
+      .label { font: 600 17px ui-sans-serif, system-ui, sans-serif; fill: #f8fafc; text-anchor: middle; }
+      .sub { font: 400 16px ui-sans-serif, system-ui, sans-serif; fill: #cbd5e1; text-anchor: middle; }
+      .step { fill: #14243a; stroke: #38bdf8; stroke-width: 1.5; rx: 14; }
+      .control { fill: #1d2e35; stroke: #2dd4bf; }
+      .boundary { fill: #2b2234; stroke: #c084fc; }
+      .escalation { fill: #382529; stroke: #fb7185; }
+      .arrow { stroke: #7dd3fc; stroke-width: 2; marker-end: url(#arrow); }
+    </style>
+  </defs>
+  <rect width="390" height="1120" fill="url(#bg)" rx="24"/>
+  <text x="195" y="42" class="label">BOUND AUTHORITY BEFORE ACTION</text>
+  <text x="195" y="66" class="sub">先限制權限，再允許外部動作</text>
+
+  <rect x="35" y="94" width="320" height="92" class="step"/>
+  <text x="195" y="130" class="label">Synthetic input</text>
+  <text x="195" y="157" class="sub">合成 market／signal observation</text>
+  <line x1="195" y1="190" x2="195" y2="222" class="arrow"/>
+
+  <rect x="35" y="230" width="320" height="92" class="step"/>
+  <text x="195" y="266" class="label">AI decision</text>
+  <text x="195" y="293" class="sub">entry · skip · exit · hold</text>
+  <line x1="195" y1="326" x2="195" y2="358" class="arrow"/>
+
+  <rect x="35" y="366" width="320" height="92" class="step control"/>
+  <text x="195" y="402" class="label">Deterministic safety gate</text>
+  <text x="195" y="429" class="sub">kill switch · owner · target</text>
+  <line x1="195" y1="462" x2="195" y2="494" class="arrow"/>
+
+  <rect x="35" y="502" width="320" height="92" class="step control"/>
+  <text x="195" y="538" class="label">Bounded executor</text>
+  <text x="195" y="565" class="sub">typed action · authority tier</text>
+  <line x1="195" y1="598" x2="195" y2="630" class="arrow"/>
+
+  <rect x="35" y="638" width="320" height="110" class="step boundary"/>
+  <text x="195" y="674" class="label">Two state authorities</text>
+  <text x="195" y="701" class="sub">external execution observation</text>
+  <text x="195" y="726" class="sub">＋ local decision ledger</text>
+  <line x1="195" y1="752" x2="195" y2="784" class="arrow"/>
+
+  <rect x="35" y="792" width="320" height="92" class="step control"/>
+  <text x="195" y="828" class="label">Reconciliation</text>
+  <text x="195" y="855" class="sub">classify drift · use least authority</text>
+  <line x1="195" y1="888" x2="195" y2="920" class="arrow"/>
+
+  <rect x="35" y="928" width="320" height="92" class="step control"/>
+  <text x="195" y="964" class="label">Watchdog／tiered recovery</text>
+  <text x="195" y="991" class="sub">allowlist · cooldown · heartbeat evidence</text>
+  <line x1="195" y1="1024" x2="195" y2="1048" class="arrow"/>
+
+  <rect x="35" y="1056" width="320" height="48" class="step escalation"/>
+  <text x="195" y="1087" class="label">Agent review／human escalation</text>
+</svg>

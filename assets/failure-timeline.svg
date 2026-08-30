@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 390 1040" role="img" aria-labelledby="title desc">
+  <title id="title">When local and exchange state split</title>
+  <desc id="desc">A mobile-first incident board showing aligned state, a partial close that leaves local closed and exchange open, the decision to preserve both observations, and bounded recovery through re-observation and human escalation.</desc>
+  <style>
+    .display { font: 800 22px ui-monospace, "SFMono-Regular", Consolas, monospace; letter-spacing: 0.04em; }
+    .label { font: 800 16px ui-monospace, "SFMono-Regular", Consolas, monospace; letter-spacing: 0.045em; }
+    .state { font: 800 20px ui-monospace, "SFMono-Regular", Consolas, monospace; }
+    .body { font: 500 16px ui-sans-serif, system-ui, sans-serif; }
+    .small { font: 650 16px ui-monospace, "SFMono-Regular", Consolas, monospace; }
+  </style>
+
+  <rect width="390" height="1040" fill="#07111f"/>
+  <text x="24" y="40" class="display" fill="#f8fafc">WHEN STATE SPLITS</text>
+  <text x="24" y="70" class="body" fill="#cbd5e1">One intent. Two authorities.</text>
+
+  <text x="24" y="116" class="label" fill="#f6b73c">BEFORE · ALIGNED</text>
+  <rect x="24" y="136" width="160" height="124" fill="#102235" stroke="#a78bfa" stroke-width="2"/>
+  <rect x="206" y="136" width="160" height="124" fill="#102235" stroke="#45d6ff" stroke-width="2"/>
+  <text x="40" y="166" class="label" fill="#a78bfa">LOCAL LEDGER</text>
+  <text x="222" y="166" class="label" fill="#45d6ff">EXCHANGE</text>
+  <text x="40" y="204" class="state" fill="#f8fafc">OPEN</text>
+  <text x="222" y="204" class="state" fill="#f8fafc">OPEN</text>
+  <text x="40" y="234" class="body" fill="#cbd5e1">owner = system</text>
+  <text x="222" y="234" class="body" fill="#cbd5e1">same lifecycle</text>
+  <line x1="184" y1="198" x2="206" y2="198" stroke="#f8fafc" stroke-width="2"/>
+
+  <text x="24" y="306" class="label" fill="#f6b73c">FAILURE · PARTIAL COMMIT</text>
+  <rect x="24" y="326" width="160" height="132" fill="#102235" stroke="#a78bfa" stroke-width="2"/>
+  <rect x="206" y="326" width="160" height="132" fill="#102235" stroke="#45d6ff" stroke-width="2"/>
+  <text x="40" y="356" class="label" fill="#a78bfa">LOCAL LEDGER</text>
+  <text x="222" y="356" class="label" fill="#45d6ff">EXCHANGE</text>
+  <text x="40" y="397" class="state" fill="#fb7185">LOCAL CLOSED</text>
+  <text x="222" y="397" class="state" fill="#f6b73c">EXCHANGE</text>
+  <text x="222" y="424" class="state" fill="#f6b73c">OPEN</text>
+  <polyline points="195,343 187,370 201,390 188,418 197,444" fill="none" stroke="#f6b73c" stroke-width="4"/>
+  <text x="24" y="490" class="display" fill="#f8fafc">ONE INTENT. TWO TRUTHS.</text>
+  <text x="24" y="520" class="body" fill="#cbd5e1">Local state cannot prove external exposure.</text>
+
+  <rect x="24" y="558" width="342" height="172" fill="#102235" stroke="#f6b73c" stroke-width="2"/>
+  <text x="40" y="590" class="label" fill="#f6b73c">DECISION</text>
+  <text x="40" y="624" class="display" fill="#f8fafc">PRESERVE BOTH STATES</text>
+  <text x="40" y="658" class="small" fill="#a78bfa">finding = EXIT_NOT_COMMITTED</text>
+  <text x="40" y="686" class="small" fill="#45d6ff">authority = OWNER + KILL SWITCH</text>
+  <text x="40" y="706" class="body" fill="#cbd5e1">Do not rewrite either side.</text>
+  <text x="40" y="726" class="body" fill="#cbd5e1">Do not manufacture sync.</text>
+
+  <text x="24" y="764" class="label" fill="#f6b73c">PERMANENT FIX</text>
+  <rect x="24" y="780" width="342" height="54" fill="#102235" stroke="#f6b73c" stroke-width="2"/>
+  <text x="40" y="813" class="small" fill="#f8fafc">01 · BOUNDED RETRY · AT MOST ONCE</text>
+  <rect x="24" y="846" width="342" height="54" fill="#102235" stroke="#45d6ff" stroke-width="2"/>
+  <text x="40" y="879" class="small" fill="#f8fafc">02 · RE-OBSERVE BOTH STATES</text>
+  <rect x="24" y="912" width="342" height="82" fill="#271b27" stroke="#fb7185" stroke-width="2"/>
+  <text x="40" y="944" class="small" fill="#f8fafc">03 · HUMAN BOUNDARY</text>
+  <text x="40" y="974" class="small" fill="#fb7185">UNRESOLVED → ESCALATE</text>
+
+  <text x="24" y="1024" class="display" fill="#fb7185">DO NOT INVENT SUCCESS</text>
+</svg>
